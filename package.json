@@ -1,6 +1,6 @@
 {
-  "name": "falcon-cli",
-  "version": "0.1.0",
+  "name": "@oksydan/falcon-cli",
+  "version": "0.2.0",
   "description": "CLI tool for falcon theme",
   "author": "Igor Stępień",
   "license": "GPL-3.0",
@@ -15,5 +15,27 @@
     "ping": "^0.4.2",
     "semver": "^7.3.7",
     "which": "^2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oksydan/falcon-cli.git"
+  },
+  "main": "index.js",
+  "bin": {
+    "falcon-cli": "index.js"
+  },
+  "keywords": [
+    "faclon",
+    "faclon-cli",
+    "prestashop",
+    "prestashop-cli",
+    "prestashop-theme"
+  ],
+  "bugs": {
+    "url": "https://github.com/Oksydan/falcon-cli/issues"
+  },
+  "homepage": "https://github.com/Oksydan/falcon-cli#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

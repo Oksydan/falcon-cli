@@ -1,9 +1,9 @@
 #! /usr/bin/env node
 
 const supportedNodeVersions = "^14.0.0 || ^15.0.0 || ^16.0.0";
-const { nodeModuleChecker, detectNvm } = require('./helpers/node');
-const { error, info } = require('./helpers/log');
-const execa = require('execa');
+const { nodeModuleChecker } = require('./src/helpers/node');
+const { error } = require('./src/helpers/log');
+const { getCurrentDirectory } = require('./src/helpers/files');
 
 if (!nodeModuleChecker(supportedNodeVersions)) {
   error(
@@ -16,19 +16,19 @@ if (!nodeModuleChecker(supportedNodeVersions)) {
 const commander = require('commander')
 
 commander
-  .version(`starter/cli ${require('../package').version}`)
+  .version(`starter/cli ${require(`${getCurrentDirectory()}/package`).version}`)
   .usage('<command> [options]')
 
 commander
   .command('init')
   .action(() => {
-    require('./actions/init')()
+    require('./src/actions/init')()
   });
 
 commander
   .command('add-entry')
   .action(() => {
-    require('./actions/addEntry')()
+    require('./src/actions/addEntry')()
   });
 
 
