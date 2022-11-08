@@ -5,6 +5,7 @@ var getDirName = path.dirname;
 
 const getJsFileTemplate = (entry) => `
 // Your js code for entry - ${entry}
+import '@js/${entry}/index';
 `;
 
 const getCssFileTemplate = (entry) => `
@@ -116,6 +117,7 @@ module.exports = class EntryCreator {
 
   async generateEntryForJs() {
     await this.writeFile(`${this.themeJsPath}/${this.entryName}.js`, getJsFileTemplate(this.entryName));
+    await this.writeFile(`${this.themeJsPath}/${this.entryName}/index.js`, '');
   }
 
   async addEntryToEntriesFile() {
