@@ -2,11 +2,11 @@
 
 const supportedNodeVersions = "^14.0.0 || ^15.0.0 || ^16.0.0";
 const { nodeModuleChecker } = require('./src/helpers/node');
-const { error } = require('./src/helpers/log');
+const { errorLog } = require('./src/helpers/log');
 const { getCurrentDirectory } = require('./src/helpers/files');
 
 if (!nodeModuleChecker(supportedNodeVersions)) {
-  error(
+  errorLog(
     'You are using Node ' + process.version + ', but this CLI tool requires Node ' + supportedNodeVersions + '.\nPlease upgrade your Node version.'
   );
 
