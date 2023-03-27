@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const supportedNodeVersions = "^14.0.0 || ^15.0.0 || ^16.0.0";
+const supportedNodeVersions = "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0";
 const { nodeModuleChecker } = require('./src/helpers/node');
 const { errorLog } = require('./src/helpers/log');
 const { getCurrentDirectory } = require('./src/helpers/files');
